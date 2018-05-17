@@ -3,3 +3,4 @@ sudo python -m pip install pip==9.0.3 --upgrade --force-reinstall
 sudo -H pip install 'cryptography<2.2'
 sudo -H pip install flask
 sudo -H pip install flask-ask
+git clone https://github.com/strategicpause/alexa-workshop.git

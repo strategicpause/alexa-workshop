@@ -18,7 +18,7 @@ These instructions assume you followed the instructions we provided to request a
 
 Login to your Cloud9 account and click "Create a new workspace."
 
-For the workspace name, use whatever you want. You can also use whatever description you want. 
+For the workspace name, let's name it 'my-first-alexa-skill'. You can use whatever description you want like 'My first Alexa Skill'. 
 
 The team should already be selected as "Seattle CoderDojo." If you did not get your invitation from Seattle CoderDojo, you will not have this option.
 
@@ -28,7 +28,12 @@ Then click the "create workspace" button. It will create a workspace ready to ru
 
 > **FOR OTHER INSTRUCTORS / STUDENTS**
 >
-> You may not be able to clone our workspace. This repository contains all the scripts you'll need. To get the Cloud9 workspace ready to run them, you'll need to run a handful of commands.
+> You may not be able to clone our workspace. This repository contains all the scripts you'll need. To get the Cloud9 workspace ready to run them, you'll need to run the following script.
+> ```shell
+> bash <(curl -sL https://github.com/strategicpause/alexa-workshop/raw/master/setup.sh)
+> ```
+
+> This script will run a handful of commands.
 >
 > ```shell
 > sudo -H pip2 install --upgrade pip
@@ -76,11 +81,11 @@ Now to add an intent. You have 4 already built in for housekeeping purposes, but
 
 **Click the "add" icon at the top of the intent list.**
 
-Give it the name "HelloWorld" and click the "Create Custom Intent" button to go to the next screen.
+Give it the name "HelloWorldIntent" and click the "Create Custom Intent" button to go to the next screen.
 
 At this point it asks for "sample utterances." These are things a user might say to convey this intent. For this we'll go with two. 
 
-**In the Sample Utterances box, type "say hello to me" and then click the plus symbol in the right side of the box to add it. Then type "greet me" and do the same to add your second sample utterance.**
+**In the Sample Utterances box, type "say hello to me" and then click the plus symbol in the right side of the box to add it. Then type "greet me" and do the same to add your second sample utterance. Finally add "say hello".** Your skill will be able to respond to all three of these utterances.
 
 You're done configuring your intent. All that's left is to tell Alexa where to find your skill handler.
 
@@ -88,9 +93,9 @@ You're done configuring your intent. All that's left is to tell Alexa where to f
 
 **Open the HelloWorld.py file. **
 
-**Click "Run."**
+**Right-click on the file and click "Run."**
 
-You'll get a message in the terminal window stating "Your code is running at https://[workspace name]-[user name].c9users.io."
+You'll get a message in the terminal window stating "Your code is running at https://[workspace name]-[user name].c9users.io:8080."
 
 **Copy that URL. **
 
@@ -102,9 +107,9 @@ You'll get a message in the terminal window stating "Your code is running at htt
 
 **In the box that says "Select SSL certificate type," choose the option that begins with "My development endpoint is a sub-domain of a domain that has a wildcard certificate..."**
 
-**Click the "Save Model" button.**
+**Click the "Save Model" button.** You'll notice a message pops up saying "If you make any new changes, you will need to rebuild your model for them to take effect." This means we saved the configuration for our skill, but we still need to build the model of our skill.
 
-**Click on your "HelloWorld" intent from the intents list.** **Click on "Build Model."**
+**Click on your "HelloWorldIntent" intent from the intents list.** **Click on "Build Model."**
 
 ### Testing your skill
 
